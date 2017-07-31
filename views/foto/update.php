@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\tfoto */
 
-$this->title = 'Update Tfoto: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Tfotos', 'url' => ['index']];
+$this->title = 'Actualizar Foto: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Fotos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="tfoto-update">
 

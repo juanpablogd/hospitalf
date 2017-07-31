@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ptipovivienda */
 
-$this->title = 'Update Ptipovivienda: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Ptipoviviendas', 'url' => ['index']];
+$this->title = 'Actualizar tipo de vivienda: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Tipos vivienda', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="ptipovivienda-update">
 

@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\tfechacontrol */
 
-$this->title = 'Update Tfechacontrol: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Tfechacontrols', 'url' => ['index']];
+$this->title = 'Actualizar fecha de control: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Fechas Control', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="tfechacontrol-update">
 

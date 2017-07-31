@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\prangoscontrol */
 
-$this->title = 'Update Prangoscontrol: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Prangoscontrols', 'url' => ['index']];
+$this->title = 'Actualizar rago de control: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Rangos contol', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="prangoscontrol-update">
 

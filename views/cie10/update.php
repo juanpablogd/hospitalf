@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\pcie10 */
 
-$this->title = 'Update Pcie10: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Pcie10s', 'url' => ['index']];
+$this->title = 'Actualizar Cie10: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Cie10', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="pcie10-update">
 

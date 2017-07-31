@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\tubicacion */
 
-$this->title = 'Update Tubicacion: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Tubicacions', 'url' => ['index']];
+$this->title = 'Actualizar ubicación: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Ubicaciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="tubicacion-update">
 
