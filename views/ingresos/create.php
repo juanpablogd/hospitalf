@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\pingresos */
 
-$this->title = 'Create Pingresos';
-$this->params['breadcrumbs'][] = ['label' => 'Pingresos', 'url' => ['index']];
+$this->title = 'Crear Ingresos';
+$this->params['breadcrumbs'][] = ['label' => 'Ingresos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pingresos-create">

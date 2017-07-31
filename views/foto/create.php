@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\tfoto */
 
-$this->title = 'Create Tfoto';
-$this->params['breadcrumbs'][] = ['label' => 'Tfotos', 'url' => ['index']];
+$this->title = 'Crear Foto';
+$this->params['breadcrumbs'][] = ['label' => 'Fotos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tfoto-create">

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\psgestanteriesgo */
 
-$this->title = 'Create Psgestanteriesgo';
-$this->params['breadcrumbs'][] = ['label' => 'Psgestanteriesgos', 'url' => ['index']];
+$this->title = 'Crear Riesgos Gestante';
+$this->params['breadcrumbs'][] = ['label' => 'Riesgos Gestante', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="psgestanteriesgo-create">

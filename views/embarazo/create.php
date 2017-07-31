@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\tembarazo */
 
-$this->title = 'Create Tembarazo';
-$this->params['breadcrumbs'][] = ['label' => 'Tembarazos', 'url' => ['index']];
+$this->title = 'Crear Embarazo';
+$this->params['breadcrumbs'][] = ['label' => 'Embarazos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tembarazo-create">

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\tgestantes */
 
-$this->title = 'Create Tgestantes';
-$this->params['breadcrumbs'][] = ['label' => 'Tgestantes', 'url' => ['index']];
+$this->title = 'Crear Gestantes';
+$this->params['breadcrumbs'][] = ['label' => 'Gestantes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tgestantes-create">

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\pcie10 */
 
-$this->title = 'Create Pcie10';
-$this->params['breadcrumbs'][] = ['label' => 'Pcie10s', 'url' => ['index']];
+$this->title = 'Crear Cie 10';
+$this->params['breadcrumbs'][] = ['label' => 'Cie 10', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pcie10-create">

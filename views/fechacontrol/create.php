@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\tfechacontrol */
 
-$this->title = 'Create Tfechacontrol';
-$this->params['breadcrumbs'][] = ['label' => 'Tfechacontrols', 'url' => ['index']];
+$this->title = 'Crear Fecha de control';
+$this->params['breadcrumbs'][] = ['label' => 'Fechas de control', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tfechacontrol-create">

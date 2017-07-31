@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\prangoscontrol */
 
-$this->title = 'Create Prangoscontrol';
-$this->params['breadcrumbs'][] = ['label' => 'Prangoscontrols', 'url' => ['index']];
+$this->title = 'Crear Rangos de control';
+$this->params['breadcrumbs'][] = ['label' => 'Rangos de control', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="prangoscontrol-create">

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\pestado */
 
-$this->title = 'Create Pestado';
-$this->params['breadcrumbs'][] = ['label' => 'Pestados', 'url' => ['index']];
+$this->title = 'Crear Estado';
+$this->params['breadcrumbs'][] = ['label' => 'Estados', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pestado-create">

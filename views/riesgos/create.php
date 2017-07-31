@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\priesgos */
 
-$this->title = 'Create Priesgos';
-$this->params['breadcrumbs'][] = ['label' => 'Priesgos', 'url' => ['index']];
+$this->title = 'Crear Riesgos';
+$this->params['breadcrumbs'][] = ['label' => 'Riesgos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="priesgos-create">

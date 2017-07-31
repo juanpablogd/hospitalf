@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ptipovivienda */
 
-$this->title = 'Create Ptipovivienda';
-$this->params['breadcrumbs'][] = ['label' => 'Ptipoviviendas', 'url' => ['index']];
+$this->title = 'Crear Tipo de vivienda';
+$this->params['breadcrumbs'][] = ['label' => 'Tipo viviendas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ptipovivienda-create">
