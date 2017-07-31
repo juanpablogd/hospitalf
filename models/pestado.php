@@ -53,6 +53,14 @@ class pestado extends \yii\db\ActiveRecord
     }
 
     /**
+     * @inheritdoc
+     */
+    public function getFullEstado()
+    {
+      return $this->detalle_estado . " (" . $this->min_semana . " - " . $this->max_semana . ")";
+    }
+
+    /**
      * @return \yii\db\ActiveQuery
      */
     public function getGestantesGtPCie10s()
