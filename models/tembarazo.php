@@ -55,15 +55,15 @@ class tembarazo extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'fecha_ultima_regla' => 'Fecha Ultima Regla',
-            'no_control_prenatal' => 'No Control Prenatal',
+            'fecha_ultima_regla' => 'Fecha última Regla',
+            'no_control_prenatal' => 'Num. Control Prenatal',
             'fecha_control_prenatal' => 'Fecha Control Prenatal',
             'edad_gesta_inicio_semana' => 'Edad Gesta Inicio Semana',
             'imc' => 'Imc',
             'fecha_parto' => 'Fecha Parto',
-            'id_gt_t_gestantes' => 'Id Gt T Gestantes',
+            'id_gt_t_gestantes' => 'Gestantes',
             'tension_arterial' => 'Tension Arterial',
-            'id_gt_p_estado' => 'Id Gt P Estado',
+            'id_gt_p_estado' => 'Estado',
         ];
     }
 

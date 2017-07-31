@@ -40,9 +40,9 @@ class prangoscontrol extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'frecuencia_dias' => 'Frecuencia Dias',
-            'semana_min' => 'Semana Min',
-            'semana_max' => 'Semana Max',
+            'frecuencia_dias' => 'Frecuencia Días',
+            'semana_min' => 'Semana Min.',
+            'semana_max' => 'Semana Max.',
         ];
     }
 }

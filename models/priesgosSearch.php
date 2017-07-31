@@ -19,7 +19,7 @@ class priesgosSearch extends priesgos
     {
         return [
             [['id'], 'integer'],
-            [['nombre_riegos'], 'safe'],
+            [['nombre_riesgos'], 'safe'],
         ];
     }
 
@@ -62,7 +62,7 @@ class priesgosSearch extends priesgos
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'nombre_riegos', $this->nombre_riegos]);
+        $query->andFilterWhere(['like', 'nombre_riesgos', $this->nombre_riesgos]);
 
         return $dataProvider;
     }

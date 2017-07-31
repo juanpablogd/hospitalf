@@ -46,8 +46,8 @@ class psgestanteriesgo extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'riesgo' => 'Riesgo',
-            'id_gt_t_embarazo' => 'Id Gt T Embarazo',
-            'id_gt_p_riesgos' => 'Id Gt P Riesgos',
+            'id_gt_t_embarazo' => 'Embarazo',
+            'id_gt_p_riesgos' => 'Riesgos',
         ];
     }
 

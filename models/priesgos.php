@@ -28,8 +28,8 @@ class priesgos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre_riegos'], 'required'],
-            [['nombre_riegos'], 'string', 'max' => 255],
+            [['nombre_riesgos'], 'required'],
+            [['nombre_riesgos'], 'string', 'max' => 255],
         ];
     }
 
@@ -40,7 +40,7 @@ class priesgos extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'nombre_riegos' => 'Nombre Riegos',
+            'nombre_riesgos' => 'Nombre Riesgos',
         ];
     }
 

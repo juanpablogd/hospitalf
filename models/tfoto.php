@@ -43,7 +43,7 @@ class tfoto extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'url' => 'Url',
-            'id_gt_t_gestantes' => 'Id Gt T Gestantes',
+            'id_gt_t_gestantes' => 'Gestantes',
         ];
     }
 

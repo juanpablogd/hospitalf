@@ -51,7 +51,7 @@ class tubicacion extends \yii\db\ActiveRecord
             'x' => 'X',
             'y' => 'Y',
             'fecha' => 'Fecha',
-            'id_gt_t_gestantes' => 'Id Gt T Gestantes',
+            'id_gt_t_gestantes' => 'Gestantes',
         ];
     }
 

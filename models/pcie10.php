@@ -43,8 +43,8 @@ class pcie10 extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'cod_cie10' => 'Cod Cie10',
-            'id_gt_p_estado' => 'Id Gt P Estado',
+            'cod_cie10' => 'Codigo Cie10',
+            'id_gt_p_estado' => 'Estado',
         ];
     }
 

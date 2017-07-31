@@ -47,8 +47,8 @@ class pestado extends \yii\db\ActiveRecord
             'id' => 'ID',
             'estado' => 'Estado',
             'detalle_estado' => 'Detalle Estado',
-            'min_semana' => 'Min Semana',
-            'max_semana' => 'Max Semana',
+            'min_semana' => 'Min. Semana',
+            'max_semana' => 'Max. Semana',
         ];
     }
 
