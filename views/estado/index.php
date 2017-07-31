@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\pestadoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Pestados';
+$this->title = 'Estados';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pestado-index">
@@ -16,15 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Pestado', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Estado', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'estado',
             'detalle_estado',
             'min_semana',

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\priesgosSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Priesgos';
+$this->title = 'Riesgos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="priesgos-index">
@@ -16,15 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Priesgos', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear riesgo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'nombre_riegos',
 
             ['class' => 'yii\grid\ActionColumn'],

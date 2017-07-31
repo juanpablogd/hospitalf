@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\tubicacionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tubicacions';
+$this->title = 'Ubicaciones';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tubicacion-index">
@@ -16,15 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Tubicacion', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear ubicación', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'documento:ntext',
             'x',
             'y',

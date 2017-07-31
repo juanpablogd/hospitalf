@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\pingresosSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Pingresos';
+$this->title = 'Ingresos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pingresos-index">
@@ -16,15 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Pingresos', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear ingreso', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'ingresos',
 
             ['class' => 'yii\grid\ActionColumn'],

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\tembarazoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tembarazos';
+$this->title = 'Embarazos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tembarazo-index">
@@ -16,15 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Tembarazo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Embarazo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'fecha_ultima_regla',
             'no_control_prenatal',
             'fecha_control_prenatal',

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\ptipoviviendaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Ptipoviviendas';
+$this->title = "Tipos de vivienda";
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ptipovivienda-index">
@@ -16,15 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Ptipovivienda', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear tipo vivienda', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'tipo_vivienda',
 
             ['class' => 'yii\grid\ActionColumn'],

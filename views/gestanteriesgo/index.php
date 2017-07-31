@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\psgestanteriesgoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Psgestanteriesgos';
+$this->title = 'Riesgos gestante';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="psgestanteriesgo-index">
@@ -16,15 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Psgestanteriesgo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear riesgo gestante', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'riesgo:boolean',
             'id_gt_t_embarazo',
             'id_gt_p_riesgos',
