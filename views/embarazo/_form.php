@@ -22,13 +22,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'imc')->textInput() ?>
 
+    <?= $form->field($model, 'tension_arterial')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'fecha_parto')->textInput() ?>
 
-    <?= $form->field($model, 'id_gt_t_gestantes')->textInput() ?>
-
-    <?= $form->field($model, 'tension_arterial')->textarea(['rows' => 6]) ?>
-
     <?= $form->field($model, 'id_gt_p_estado')->textInput() ?>
+
+    <?= $form->field($model, 'id_gt_t_gestantes')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

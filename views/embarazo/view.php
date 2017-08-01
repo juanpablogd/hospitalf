@@ -34,10 +34,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'fecha_control_prenatal',
             'edad_gesta_inicio_semana',
             'imc',
+            'tension_arterial',
             'fecha_parto',
-            'id_gt_t_gestantes',
-            'tension_arterial:ntext',
             'id_gt_p_estado',
+            'id_gt_t_gestantes',
         ],
     ]) ?>
 

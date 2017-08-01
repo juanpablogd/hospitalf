@@ -27,13 +27,13 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'imc') ?>
 
-    <?php // echo $form->field($model, 'fecha_parto') ?>
-
-    <?php // echo $form->field($model, 'id_gt_t_gestantes') ?>
-
     <?php // echo $form->field($model, 'tension_arterial') ?>
 
+    <?php // echo $form->field($model, 'fecha_parto') ?>
+
     <?php // echo $form->field($model, 'id_gt_p_estado') ?>
+
+    <?php // echo $form->field($model, 'id_gt_t_gestantes') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

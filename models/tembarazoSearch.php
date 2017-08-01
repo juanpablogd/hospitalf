@@ -18,9 +18,8 @@ class tembarazoSearch extends tembarazo
     public function rules()
     {
         return [
-            [['id', 'no_control_prenatal', 'edad_gesta_inicio_semana', 'id_gt_t_gestantes', 'id_gt_p_estado'], 'integer'],
-            [['fecha_ultima_regla', 'fecha_control_prenatal', 'fecha_parto', 'tension_arterial'], 'safe'],
-            [['imc'], 'number'],
+            [['id', 'no_control_prenatal', 'edad_gesta_inicio_semana', 'imc', 'id_gt_p_estado', 'id_gt_t_gestantes'], 'integer'],
+            [['fecha_ultima_regla', 'fecha_control_prenatal', 'tension_arterial', 'fecha_parto'], 'safe'],
         ];
     }
 
@@ -67,8 +66,8 @@ class tembarazoSearch extends tembarazo
             'edad_gesta_inicio_semana' => $this->edad_gesta_inicio_semana,
             'imc' => $this->imc,
             'fecha_parto' => $this->fecha_parto,
-            'id_gt_t_gestantes' => $this->id_gt_t_gestantes,
             'id_gt_p_estado' => $this->id_gt_p_estado,
+            'id_gt_t_gestantes' => $this->id_gt_t_gestantes,
         ]);
 
         $query->andFilterWhere(['like', 'tension_arterial', $this->tension_arterial]);
