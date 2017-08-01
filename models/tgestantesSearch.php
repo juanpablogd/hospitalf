@@ -18,8 +18,8 @@ class tgestantesSearch extends tgestantes
     public function rules()
     {
         return [
-            [['id', 'numero_ocupantes', 'no_partos', 'no_abortos', 'no_partos_pretermino', 'id_gt_p_ingresos', 'id_gt_p_tipo_vivienda'], 'integer'],
-            [['documento', 'nombre', 'apellido', 'eps', 'fecha_nacimiento', 'zona', 'direccion', 'telefono_1', 'telefono_2'], 'safe'],
+            [['id', 'telefono_1', 'telefono_2', 'numero_ocupantes', 'no_partos', 'no_abortos', 'no_partos_pretermino', 'id_gt_p_ingresos', 'id_gt_p_tipo_vivienda'], 'integer'],
+            [['documento', 'nombre', 'apellido', 'eps', 'fecha_nacimiento', 'zona', 'direccion'], 'safe'],
         ];
     }
 
@@ -60,6 +60,8 @@ class tgestantesSearch extends tgestantes
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'telefono_1' => $this->telefono_1,
+            'telefono_2' => $this->telefono_2,
             'numero_ocupantes' => $this->numero_ocupantes,
             'fecha_nacimiento' => $this->fecha_nacimiento,
             'no_partos' => $this->no_partos,
@@ -74,9 +76,7 @@ class tgestantesSearch extends tgestantes
             ->andFilterWhere(['like', 'apellido', $this->apellido])
             ->andFilterWhere(['like', 'eps', $this->eps])
             ->andFilterWhere(['like', 'zona', $this->zona])
-            ->andFilterWhere(['like', 'direccion', $this->direccion])
-            ->andFilterWhere(['like', 'telefono_1', $this->telefono_1])
-            ->andFilterWhere(['like', 'telefono_2', $this->telefono_2]);
+            ->andFilterWhere(['like', 'direccion', $this->direccion]);
 
         return $dataProvider;
     }

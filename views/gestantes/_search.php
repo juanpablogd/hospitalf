@@ -23,7 +23,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'apellido') ?>
 
-    <?= $form->field($model, 'numero_ocupantes') ?>
+    <?= $form->field($model, 'telefono_1') ?>
+
+    <?php // echo $form->field($model, 'telefono_2') ?>
+
+    <?php // echo $form->field($model, 'numero_ocupantes') ?>
 
     <?php // echo $form->field($model, 'eps') ?>
 
@@ -42,10 +46,6 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'id_gt_p_ingresos') ?>
 
     <?php // echo $form->field($model, 'id_gt_p_tipo_vivienda') ?>
-
-    <?php // echo $form->field($model, 'telefono_1') ?>
-
-    <?php // echo $form->field($model, 'telefono_2') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
