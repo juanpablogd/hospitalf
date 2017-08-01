@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\pcie10 */
 
-$this->title = $model->id;
+$this->title = $model->cod_cie10;
 $this->params['breadcrumbs'][] = ['label' => 'Cie10', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'cod_cie10',
             'id_gt_p_estado',
         ],

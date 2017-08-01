@@ -29,7 +29,7 @@ class pcie10 extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cod_cie10'], 'required'],
+            [['cod_cie10','id_gt_p_estado'], 'required'],
             [['id_gt_p_estado'], 'integer'],
             [['cod_cie10'], 'string', 'max' => 255],
             [['id_gt_p_estado'], 'exist', 'skipOnError' => true, 'targetClass' => pestado::className(), 'targetAttribute' => ['id_gt_p_estado' => 'id']],
