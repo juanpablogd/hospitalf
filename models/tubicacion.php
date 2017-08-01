@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "hospitalfaca.gt_t_ubicacion".
+ * This is the model class for table "gestantes.gt_t_ubicacion".
  *
  * @property integer $id
  * @property string $documento
@@ -14,7 +14,7 @@ use Yii;
  * @property string $fecha
  * @property integer $id_gt_t_gestantes
  *
- * @property HospitalfacaGtTGestantes $idGtTGestantes
+ * @property GestantesGtTGestantes $idGtTGestantes
  */
 class tubicacion extends \yii\db\ActiveRecord
 {
@@ -23,7 +23,7 @@ class tubicacion extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'hospitalfaca.gt_t_ubicacion';
+        return 'gestantes.gt_t_ubicacion';
     }
 
     /**
@@ -32,10 +32,11 @@ class tubicacion extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['documento'], 'string'],
+            [['documento', 'x', 'y', 'fecha', 'id_gt_t_gestantes'], 'required'],
             [['x', 'y'], 'number'],
             [['fecha'], 'safe'],
             [['id_gt_t_gestantes'], 'integer'],
+            [['documento'], 'string', 'max' => 30],
             [['id_gt_t_gestantes'], 'exist', 'skipOnError' => true, 'targetClass' => tgestantes::className(), 'targetAttribute' => ['id_gt_t_gestantes' => 'id']],
         ];
     }

@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\tubicacion */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Unicaciones', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Ubicaciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tubicacion-view">
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'documento:ntext',
+            'documento',
             'x',
             'y',
             'fecha',
