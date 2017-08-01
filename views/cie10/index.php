@@ -23,8 +23,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             'cod_cie10',
-            'id_gt_p_estado',
-
+            [
+                'label' => 'Estado',
+                'format' => 'ntext',
+                'attribute'=>'id_gt_p_estado',
+                'value' => function($model) {
+                    return $model->idGtPEstado['estado'];
+                },
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

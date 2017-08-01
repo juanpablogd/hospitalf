@@ -18,8 +18,8 @@ class pcie10Search extends pcie10
     public function rules()
     {
         return [
-            [['id', 'id_gt_p_estado'], 'integer'],
-            [['cod_cie10'], 'safe'],
+            [['id'], 'integer'],
+            [['cod_cie10', 'id_gt_p_estado'], 'safe'],
         ];
     }
 
@@ -47,6 +47,7 @@ class pcie10Search extends pcie10
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['attributes' => ['cod_cie10', 'id_gt_p_estado']]
         ]);
 
         $this->load($params);
@@ -57,13 +58,12 @@ class pcie10Search extends pcie10
             return $dataProvider;
         }
 
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'id_gt_p_estado' => $this->id_gt_p_estado,
-        ]);
+        $query->joinWith('idGtPEstado');
 
-        $query->andFilterWhere(['like', 'cod_cie10', $this->cod_cie10]);
+        // grid filtering conditions
+        $query->andFilterWhere(['like', 'LOWER(cod_cie10)', strtolower($this->cod_cie10)])
+            ->andFilterWhere(['like', 'LOWER(estado)', strtolower($this->id_gt_p_estado)])
+        ;
 
         return $dataProvider;
     }

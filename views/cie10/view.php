@@ -29,7 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'cod_cie10',
-            'id_gt_p_estado',
+            [
+             'attribute' => 'id_gt_p_estado',
+                'value' => function($model) {
+                    return $model->idGtPEstado['estado'];
+                },
+            ]
         ],
     ]) ?>
 
