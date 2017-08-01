@@ -5,15 +5,15 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "hospitalfaca.gt_paso_gestante_riesgo".
+ * This is the model class for table "gestantes.gt_paso_gestante_riesgo".
  *
  * @property integer $id
  * @property boolean $riesgo
  * @property integer $id_gt_t_embarazo
  * @property integer $id_gt_p_riesgos
  *
- * @property HospitalfacaGtPRiesgos $idGtPRiesgos
- * @property HospitalfacaGtTEmbarazo $idGtTEmbarazo
+ * @property GestantesGtPRiesgos $idGtPRiesgos
+ * @property GestantesGtTEmbarazo $idGtTEmbarazo
  */
 class psgestanteriesgo extends \yii\db\ActiveRecord
 {
@@ -22,7 +22,7 @@ class psgestanteriesgo extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'hospitalfaca.gt_paso_gestante_riesgo';
+        return 'gestantes.gt_paso_gestante_riesgo';
     }
 
     /**
@@ -32,6 +32,7 @@ class psgestanteriesgo extends \yii\db\ActiveRecord
     {
         return [
             [['riesgo'], 'boolean'],
+            [['id_gt_t_embarazo', 'id_gt_p_riesgos'], 'required'],
             [['id_gt_t_embarazo', 'id_gt_p_riesgos'], 'integer'],
             [['id_gt_p_riesgos'], 'exist', 'skipOnError' => true, 'targetClass' => priesgos::className(), 'targetAttribute' => ['id_gt_p_riesgos' => 'id']],
             [['id_gt_t_embarazo'], 'exist', 'skipOnError' => true, 'targetClass' => tembarazo::className(), 'targetAttribute' => ['id_gt_t_embarazo' => 'id']],
