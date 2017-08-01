@@ -57,7 +57,7 @@ class pestado extends \yii\db\ActiveRecord
      */
     public function getFullEstado()
     {
-      return $this->detalle_estado . " (" . $this->min_semana . " - " . $this->max_semana . ")";
+      return $this->estado . " (" . $this->min_semana . " - " . $this->max_semana . ")";
     }
 
     /**

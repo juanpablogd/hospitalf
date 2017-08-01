@@ -5,12 +5,14 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "hospitalfaca.gt_t_gestantes".
+ * This is the model class for table "gestantes.gt_t_gestantes".
  *
  * @property integer $id
  * @property string $documento
  * @property string $nombre
  * @property string $apellido
+ * @property integer $telefono_1
+ * @property integer $telefono_2
  * @property integer $numero_ocupantes
  * @property string $eps
  * @property string $fecha_nacimiento
@@ -21,14 +23,12 @@ use Yii;
  * @property integer $no_partos_pretermino
  * @property integer $id_gt_p_ingresos
  * @property integer $id_gt_p_tipo_vivienda
- * @property string $telefono_1
- * @property string $telefono_2
  *
- * @property HospitalfacaGtTEmbarazo[] $hospitalfacaGtTEmbarazos
- * @property HospitalfacaGtTFoto[] $hospitalfacaGtTFotos
- * @property HospitalfacaGtPIngresos $idGtPIngresos
- * @property HospitalfacaGtPTipoVivienda $idGtPTipoVivienda
- * @property HospitalfacaGtTUbicacion[] $hospitalfacaGtTUbicacions
+ * @property GestantesGtTEmbarazo[] $gestantesGtTEmbarazos
+ * @property GestantesGtTFoto[] $gestantesGtTFotos
+ * @property GestantesGtPIngresos $idGtPIngresos
+ * @property GestantesGtPTipoVivienda $idGtPTipoVivienda
+ * @property GestantesGtTUbicacion[] $gestantesGtTUbicacions
  */
 class tgestantes extends \yii\db\ActiveRecord
 {
@@ -37,7 +37,7 @@ class tgestantes extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'hospitalfaca.gt_t_gestantes';
+        return 'gestantes.gt_t_gestantes';
     }
 
     /**
@@ -46,9 +46,11 @@ class tgestantes extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['documento', 'nombre', 'apellido', 'eps', 'zona', 'direccion', 'telefono_1', 'telefono_2'], 'string'],
-            [['numero_ocupantes', 'no_partos', 'no_abortos', 'no_partos_pretermino', 'id_gt_p_ingresos', 'id_gt_p_tipo_vivienda'], 'integer'],
+            [['documento', 'nombre', 'apellido', 'telefono_1', 'numero_ocupantes', 'fecha_nacimiento', 'zona', 'direccion', 'id_gt_p_ingresos', 'id_gt_p_tipo_vivienda'], 'required'],
+            [['telefono_1', 'telefono_2', 'numero_ocupantes', 'no_partos', 'no_abortos', 'no_partos_pretermino', 'id_gt_p_ingresos', 'id_gt_p_tipo_vivienda'], 'integer'],
             [['fecha_nacimiento'], 'safe'],
+            [['documento'], 'string', 'max' => 30],
+            [['nombre', 'apellido', 'eps', 'zona', 'direccion'], 'string', 'max' => 255],
             [['id_gt_p_ingresos'], 'exist', 'skipOnError' => true, 'targetClass' => pingresos::className(), 'targetAttribute' => ['id_gt_p_ingresos' => 'id']],
             [['id_gt_p_tipo_vivienda'], 'exist', 'skipOnError' => true, 'targetClass' => ptipovivienda::className(), 'targetAttribute' => ['id_gt_p_tipo_vivienda' => 'id']],
         ];
@@ -64,6 +66,8 @@ class tgestantes extends \yii\db\ActiveRecord
             'documento' => 'Documento',
             'nombre' => 'Nombre',
             'apellido' => 'Apellido',
+            'telefono_1' => 'Teléfono 1',
+            'telefono_2' => 'Teléfono 2',
             'numero_ocupantes' => 'Número Ocupantes',
             'eps' => 'Eps',
             'fecha_nacimiento' => 'Fecha Nacimiento',
@@ -74,15 +78,13 @@ class tgestantes extends \yii\db\ActiveRecord
             'no_partos_pretermino' => 'Num. Partos Pretermino',
             'id_gt_p_ingresos' => 'Ingresos',
             'id_gt_p_tipo_vivienda' => 'Tipo Vivienda',
-            'telefono_1' => 'Teléfono 1',
-            'telefono_2' => 'Teléfono 2',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getHospitalfacaGtTEmbarazos()
+    public function getGestantesGtTEmbarazos()
     {
         return $this->hasMany(tembarazo::className(), ['id_gt_t_gestantes' => 'id']);
     }
@@ -90,7 +92,7 @@ class tgestantes extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getHospitalfacaGtTFotos()
+    public function getGestantesGtTFotos()
     {
         return $this->hasMany(tfoto::className(), ['id_gt_t_gestantes' => 'id']);
     }
@@ -114,7 +116,7 @@ class tgestantes extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getHospitalfacaGtTUbicacions()
+    public function getGestantesGtTUbicacions()
     {
         return $this->hasMany(tubicacion::className(), ['id_gt_t_gestantes' => 'id']);
     }
