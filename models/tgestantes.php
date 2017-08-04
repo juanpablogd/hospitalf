@@ -46,8 +46,8 @@ class tgestantes extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['documento', 'nombre', 'apellido', 'telefono_1', 'numero_ocupantes', 'fecha_nacimiento', 'zona', 'direccion', 'id_gt_p_ingresos', 'id_gt_p_tipo_vivienda'], 'required'],
-            [['telefono_1', 'telefono_2', 'numero_ocupantes', 'no_partos', 'no_abortos', 'no_partos_pretermino', 'id_gt_p_ingresos', 'id_gt_p_tipo_vivienda'], 'integer'],
+            [['documento', 'nombre', 'apellido', 'telefono_1', 'numero_ocupantes', 'fecha_nacimiento', 'zona', 'direccion', 'no_partos', 'no_abortos', 'no_partos_pretermino', 'id_gt_p_ingresos', 'id_gt_p_tipo_vivienda'], 'required'],
+            [['telefono_1', 'telefono_2', 'numero_ocupantes', 'id_gt_p_ingresos', 'id_gt_p_tipo_vivienda'], 'integer'],
             [['fecha_nacimiento'], 'safe'],
             [['documento'], 'string', 'max' => 30],
             [['nombre', 'apellido', 'eps', 'zona', 'direccion'], 'string', 'max' => 255],

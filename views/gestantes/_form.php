@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
+use app\models\pingresos;
+use app\models\ptipovivienda;
 /* @var $this yii\web\View */
 /* @var $model app\models\tgestantes */
 /* @var $form yii\widgets\ActiveForm */
@@ -26,7 +30,6 @@ use kartik\date\DatePicker;
 
     <?= $form->field($model, 'eps')->textInput(['maxlength' => true]) ?>
 
-    <!-- ?= $form->field($model, 'fecha_nacimiento')->textInput() ? -->
 <?php
     echo DatePicker::widget([
         'model' => $model,
@@ -50,9 +53,27 @@ use kartik\date\DatePicker;
 
     <?= $form->field($model, 'no_partos_pretermino')->textInput() ?>
 
-    <?= $form->field($model, 'id_gt_p_ingresos')->textInput() ?>
+<?php    // Normal select with ActiveForm & model
+    echo $form->field($model, 'id_gt_p_ingresos')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(pingresos::find()->orderBy(['ingresos'=>SORT_ASC])->all(),'id','ingresos'),
+        'language' => 'es',
+        'options' => ['placeholder' => 'Seleccione un rango de Ingreso ...'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]); 
+?>
 
-    <?= $form->field($model, 'id_gt_p_tipo_vivienda')->textInput() ?>
+<?php    // Normal select with ActiveForm & model
+    echo $form->field($model, 'id_gt_p_tipo_vivienda')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(ptipovivienda::find()->orderBy(['tipo_vivienda'=>SORT_ASC])->all(),'id','tipo_vivienda'),
+        'language' => 'es',
+        'options' => ['placeholder' => 'Seleccione un tipo de Vivienda ...'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]); 
+?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
