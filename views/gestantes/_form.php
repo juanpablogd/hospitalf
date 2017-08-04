@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use kartik\date\DatePicker;
 /* @var $this yii\web\View */
 /* @var $model app\models\tgestantes */
 /* @var $form yii\widgets\ActiveForm */
@@ -26,7 +26,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'eps')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'fecha_nacimiento')->textInput() ?>
+    <!-- ?= $form->field($model, 'fecha_nacimiento')->textInput() ? -->
+<?php
+    echo DatePicker::widget([
+        'model' => $model,
+        'attribute' => 'fecha_nacimiento',
+        'options' => ['placeholder' => 'Seleccione Fecha...'],
+        'form' => $form,
+        'pluginOptions' => [
+            'format' => 'yyyy-mm-dd',
+            'autoclose' => true,
+        ]
+    ]);
+?>
 
     <?= $form->field($model, 'zona')->textInput(['maxlength' => true]) ?>
 
