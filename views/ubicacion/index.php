@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-
+use kartik\date\DatePicker;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\tubicacionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -22,12 +22,48 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            'documento',
+            [
+                'label' => 'CC',
+                'format' => 'ntext',
+                'attribute'=>'documento',
+                'value' => function($model) {
+                    return $model->idGtTGestantes['documento'];
+                },
+            ],
+            [
+                'label' => 'Nombres',
+                'format' => 'ntext',
+                'attribute'=>'nombre',
+                'value' => function($model) {
+                    return $model->idGtTGestantes['nombre'];
+                },
+            ],
+            [
+                'label' => 'Apellidos',
+                'format' => 'ntext',
+                'attribute'=>'apellido',
+                'value' => function($model) {
+                    return $model->idGtTGestantes['apellido'];
+                },
+            ],
             'x',
             'y',
-            'fecha',
+            [   'attribute' => 'fecha',
+                'value' => 'fecha',
+                'format' => 'raw',
+                'filter' => DatePicker::widget([
+                            'model' => $searchModel,
+                            'name' => 'fecha',
+                            'attribute' => 'fecha',
+                            'options' => ['placeholder' => 'Seleccione Fecha...'],
+                            'form' => $form,
+                            'pluginOptions' => [
+                                'format' => 'yyyy-mm-dd',
+                                'autoclose' => true,
+                            ]
+                        ]),
+            ],
             // 'id_gt_t_gestantes',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

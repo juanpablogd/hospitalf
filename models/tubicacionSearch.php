@@ -12,14 +12,16 @@ use app\models\tubicacion;
  */
 class tubicacionSearch extends tubicacion
 {
+    public $nombre;
+    public $apellido;
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'id_gt_t_gestantes'], 'integer'],
-            [['documento', 'fecha'], 'safe'],
+            [['documento', 'id_gt_t_gestantes'], 'integer'],
+            [['nombre','apellido', 'fecha'], 'safe'],
             [['x', 'y'], 'number'],
         ];
     }
@@ -48,6 +50,7 @@ class tubicacionSearch extends tubicacion
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['attributes' => ['documento', 'nombre', 'apellido', 'x', 'y', 'fecha']]
         ]);
 
         $this->load($params);
@@ -58,16 +61,20 @@ class tubicacionSearch extends tubicacion
             return $dataProvider;
         }
 
+        $query->joinWith('idGtTGestantes');
+
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
             'x' => $this->x,
             'y' => $this->y,
             'fecha' => $this->fecha,
-            'id_gt_t_gestantes' => $this->id_gt_t_gestantes,
         ]);
 
-        $query->andFilterWhere(['like', 'documento', $this->documento]);
+        $query->andFilterWhere(['like', 'gt_t_gestantes.documento', $this->documento])
+            ->andFilterWhere(['like', 'gt_t_gestantes.nombre', $this->nombre])
+            ->andFilterWhere(['like', 'gt_t_gestantes.apellido', $this->apellido])
+
+            ;
 
         return $dataProvider;
     }
