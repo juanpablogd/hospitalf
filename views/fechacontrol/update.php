@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $model app\models\tfechacontrol */
 
 $this->title = 'Actualizar fecha de control: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Fechas Control', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => 'Fechas Control', 'url' => ['index', 'id' => $_GET['id_gt_t_embarazo']]];
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id, 'id_gt_t_embarazo' => $_GET['id_gt_t_embarazo']]];
 $this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="tfechacontrol-update">

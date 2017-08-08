@@ -31,9 +31,10 @@ class tfechacontrol extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['documento', 'fecha'], 'required'],
+            [['documento', 'fecha', 'numero'], 'required'],
             [['fecha'], 'safe'],
-            [['numero', 'id_gt_t_embarazo'], 'integer'],
+            [['id_gt_t_embarazo'], 'integer'],
+            [['numero'],'integer','max'=>32767],
             [['documento'], 'string', 'max' => 30],
             [['id_gt_t_embarazo'], 'exist', 'skipOnError' => true, 'targetClass' => tembarazo::className(), 'targetAttribute' => ['id_gt_t_embarazo' => 'id']],
         ];

@@ -18,7 +18,8 @@ class tfechacontrolSearch extends tfechacontrol
     public function rules()
     {
         return [
-            [['id', 'numero', 'id_gt_t_embarazo'], 'integer'],
+            [['id', 'id_gt_t_embarazo'], 'integer'],
+            [['numero'],'integer','max'=>32767],
             [['documento', 'fecha'], 'safe'],
         ];
     }
