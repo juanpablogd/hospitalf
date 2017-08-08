@@ -68,6 +68,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ]),
             ],
             'no_control_prenatal',
+
             //'edad_gesta_inicio_semana',
             // 'imc',
             // 'fecha_parto',
@@ -75,7 +76,39 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'tension_arterial:ntext',
             // 'id_gt_p_estado',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+        'class' => 'yii\grid\ActionColumn',
+        'template' => '{view} {update} {delete}',
+        'buttons'  => [
+        'view' => function($url, $searchModel) {
+                return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, [
+                        'title' => Yii::t('app', 'View'),]);
+        }
+        ],
+        'buttons'  => [
+        'update' => function($url, $searchModel) {
+                return Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url, [
+                        'title' => Yii::t('app', 'Update'),]);
+        }
+        ],
+        'buttons'  => [
+        'delete' => function($url, $searchModel) {
+                return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $searchModel['id']], [
+                        'title' => Yii::t('app', 'Delete'), 'data-confirm' => Yii::t('app', 'Are you sure you want to delete this Record?'),'data-method' => 'post']);
+        }
+        ],
+
+        'urlCreator' => function ($action, $searchModel, $key, $index) {
+        if ($action === 'view') {
+                $url = 'index.php?r=embarazo/view&id='.$searchModel['id'];
+                return $url;
+        }
+        if($action === 'update') {
+                $url = 'index.php?r=embarazo/update&id='.$searchModel['id'];
+                return $url;
+        }
+        }
+],
         ],
     ]); ?>
 </div>
