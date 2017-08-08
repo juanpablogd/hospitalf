@@ -41,8 +41,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'no_partos',
             'no_abortos',
             'no_partos_pretermino',
-            'id_gt_p_ingresos',
-            'id_gt_p_tipo_vivienda',
+            [
+             'attribute' => 'id_gt_p_ingresos',
+                'value' => function($model) {
+                    return $model->idGtPIngresos['ingresos'];
+                },
+            ],
+            [
+             'attribute' => 'id_gt_p_tipo_vivienda',
+                'value' => function($model) {
+                    return $model->idGtPTipoVivienda['tipo_vivienda'];
+                },
+            ],
         ],
     ]) ?>
 
