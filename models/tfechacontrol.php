@@ -48,7 +48,7 @@ class tfechacontrol extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'documento' => 'Documento',
-            'fecha' => 'Fecha',
+            'fecha' => 'Fecha control',
             'numero' => 'Número',
             'id_gt_t_embarazo' => 'Embarazo',
         ];

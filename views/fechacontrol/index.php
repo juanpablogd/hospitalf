@@ -22,7 +22,39 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            'documento',
+            [
+                'label' => 'F. última regla',
+                'format' => 'ntext',
+                'attribute'=>'fecha_ultima_regla',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo['fecha_ultima_regla'];
+                },
+            ],
+            [
+                'label' => 'Documento',
+                'format' => 'ntext',
+                'attribute'=>'document0',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo->idGtTGestantes->documento;
+                },
+            ],
+            [
+                'label' => 'Nombre',
+                'format' => 'ntext',
+                'attribute'=>'nombre',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo->idGtTGestantes->nombre;
+                },
+            ],
+            [
+                'label' => 'Apellido',
+                'format' => 'ntext',
+                'attribute'=>'apellido',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo->idGtTGestantes->apellido;
+                },
+            ],
+            // $model->destination->designationGroup->group_name
             'fecha',
             'numero',
             [
@@ -31,19 +63,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 'buttons'  => [
                     'view' => function($url, $searchModel) {
                             return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, [
-                                    'title' => Yii::t('app', 'View'),]);
+                                    'title' => Yii::t('yii', 'View'),]);
                     }
                 ],
                 'buttons'  => [
                     'update' => function($url, $searchModel) {
                             return Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url, [
-                                    'title' => Yii::t('app', 'Update'),]);
+                                    'title' => Yii::t('yii', 'Update'),]);
                     }
                 ],
                 'buttons'  => [
                     'delete' => function($url, $searchModel) {
                             return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $searchModel['id'], 'id_gt_t_embarazo' => $_GET['id']], [
-                                    'title' => Yii::t('app', 'Delete'), 'data-confirm' => Yii::t('app', 'Desea eliminar este elemento?'),'data-method' => 'post']);
+                                    'title' => Yii::t('yii', 'Delete'), 'data-confirm' => Yii::t('yii', 'Desea eliminar este elemento?'),'data-method' => 'post']);
                     }
                 ],
                 'urlCreator' => function ($action, $searchModel, $key, $index) {
