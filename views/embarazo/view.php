@@ -29,6 +29,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            [
+                'attribute' => 'id_gt_t_gestantes',
+                'value' => function($model) {
+                    return $model->idGtTGestantes['fullNombre'];
+                },
+            ],
+            [
+                'attribute' => 'id_gt_p_estado',
+                'value' => function($model) {
+                    return $model->idGtPEstado['fullEstado'];
+                },
+            ],
             'fecha_ultima_regla',
             'no_control_prenatal',
             'fecha_control_prenatal',
@@ -36,8 +48,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'imc',
             'tension_arterial',
             'fecha_parto',
-            'id_gt_p_estado',
-            'id_gt_t_gestantes',
         ],
     ]) ?>
 

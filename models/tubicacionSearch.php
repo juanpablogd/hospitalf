@@ -70,9 +70,9 @@ class tubicacionSearch extends tubicacion
             'fecha' => $this->fecha,
         ]);
 
-        $query->andFilterWhere(['like', 'gt_t_gestantes.documento', $this->documento])
-            ->andFilterWhere(['like', 'gt_t_gestantes.nombre', $this->nombre])
-            ->andFilterWhere(['like', 'gt_t_gestantes.apellido', $this->apellido])
+        $query->andFilterWhere(['like', 'LOWER(gt_t_gestantes.documento)', strtolower($this->documento)])
+            ->andFilterWhere(['like', 'LOWER(gt_t_gestantes.nombre)', strtolower($this->nombre)])
+            ->andFilterWhere(['like', 'LOWER(gt_t_gestantes.apellido)', strtolower($this->apellido)])
 
             ;
 

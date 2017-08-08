@@ -15,17 +15,17 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?= $form->field($model, 'documento') ?>
+
+    <?= $form->field($model, 'nombre') ?>
+
+    <?= $form->field($model, 'apellido') ?>
+
+    <?= $form->field($model, 'estado') ?>
 
     <?= $form->field($model, 'fecha_ultima_regla') ?>
 
-    <?= $form->field($model, 'no_control_prenatal') ?>
-
-    <?= $form->field($model, 'fecha_control_prenatal') ?>
-
-    <?= $form->field($model, 'edad_gesta_inicio_semana') ?>
-
-    <?php // echo $form->field($model, 'imc') ?>
+    <?php  echo $form->field($model, 'no_control_prenatal') ?>
 
     <?php // echo $form->field($model, 'tension_arterial') ?>
 

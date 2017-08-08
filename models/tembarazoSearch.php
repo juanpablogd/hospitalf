@@ -12,14 +12,18 @@ use app\models\tembarazo;
  */
 class tembarazoSearch extends tembarazo
 {
+    public $documento;
+    public $nombre;
+    public $apellido;
+    public $estado;
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'no_control_prenatal', 'edad_gesta_inicio_semana', 'imc', 'id_gt_p_estado', 'id_gt_t_gestantes'], 'integer'],
-            [['fecha_ultima_regla', 'fecha_control_prenatal', 'tension_arterial', 'fecha_parto'], 'safe'],
+            [['no_control_prenatal'], 'integer'],
+            [['documento','nombre','apellido', 'estado','fecha_ultima_regla'], 'safe'],
         ];
     }
 
@@ -47,6 +51,7 @@ class tembarazoSearch extends tembarazo
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['attributes' => ['documento', 'nombre', 'apellido', 'estado', 'fecha_ultima_regla', 'no_control_prenatal']]
         ]);
 
         $this->load($params);
@@ -57,21 +62,22 @@ class tembarazoSearch extends tembarazo
             return $dataProvider;
         }
 
+        $query->joinWith('idGtTGestantes');
+        $query->joinWith('idGtPEstado');
+
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
             'fecha_ultima_regla' => $this->fecha_ultima_regla,
             'no_control_prenatal' => $this->no_control_prenatal,
-            'fecha_control_prenatal' => $this->fecha_control_prenatal,
-            'edad_gesta_inicio_semana' => $this->edad_gesta_inicio_semana,
-            'imc' => $this->imc,
-            'fecha_parto' => $this->fecha_parto,
-            'id_gt_p_estado' => $this->id_gt_p_estado,
-            'id_gt_t_gestantes' => $this->id_gt_t_gestantes,
         ]);
 
-        $query->andFilterWhere(['like', 'tension_arterial', $this->tension_arterial]);
+        $query->andFilterWhere(['like', 'LOWER(gt_t_gestantes.documento)', strtolower($this->documento)])
+            ->andFilterWhere(['like', 'LOWER(gt_t_gestantes.nombre)', strtolower($this->nombre)])
+            ->andFilterWhere(['like', 'LOWER(gt_t_gestantes.apellido)', strtolower($this->apellido)])
+            ->andFilterWhere(['like', 'LOWER(gt_p_estado.estado)', strtolower($this->estado)])
+        ;
 
         return $dataProvider;
     }
 }
+

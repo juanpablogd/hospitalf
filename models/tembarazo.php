@@ -39,7 +39,7 @@ class tembarazo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['fecha_ultima_regla', 'id_gt_p_estado', 'id_gt_t_gestantes'], 'required'],
+            [['fecha_ultima_regla', 'id_gt_p_estado', 'id_gt_t_gestantes', 'no_control_prenatal'], 'required'],
             [['fecha_ultima_regla', 'fecha_control_prenatal', 'fecha_parto'], 'safe'],
             [['no_control_prenatal', 'edad_gesta_inicio_semana', 'imc', 'id_gt_p_estado', 'id_gt_t_gestantes'], 'integer'],
             [['tension_arterial'], 'string', 'max' => 20],
@@ -64,7 +64,7 @@ class tembarazo extends \yii\db\ActiveRecord
             'tension_arterial' => 'Tension Arterial',
             'fecha_parto' => 'Fecha Parto',
             'id_gt_p_estado' => 'Estado',
-            'id_gt_t_gestantes' => 'Gestantes',
+            'id_gt_t_gestantes' => 'Gestante',
         ];
     }
 

@@ -71,9 +71,9 @@ class tgestantesSearch extends tgestantes
             'id_gt_p_tipo_vivienda' => $this->id_gt_p_tipo_vivienda,
         ]);
 
-        $query->andFilterWhere(['like', 'documento', $this->documento])
-            ->andFilterWhere(['like', 'nombre', $this->nombre])
-            ->andFilterWhere(['like', 'apellido', $this->apellido])
+        $query->andFilterWhere(['like', 'LOWER(documento)', strtolower($this->documento)])
+            ->andFilterWhere(['like', 'LOWER(nombre)', strtolower($this->nombre)])
+            ->andFilterWhere(['like', 'LOWER(apellido)', strtolower($this->apellido)])
             ->andFilterWhere(['like', 'eps', $this->eps])
             ->andFilterWhere(['like', 'zona', $this->zona])
             ->andFilterWhere(['like', 'direccion', $this->direccion]);
