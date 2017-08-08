@@ -49,8 +49,8 @@ class tubicacion extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'documento' => 'Documento',
-            'x' => 'X',
-            'y' => 'Y',
+            'x' => 'Longitud',
+            'y' => 'Latitud',
             'fecha' => 'Fecha',
             'id_gt_t_gestantes' => 'Gestantes',
         ];

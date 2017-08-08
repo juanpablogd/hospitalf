@@ -33,7 +33,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'x',
             'y',
             'fecha',
-            'id_gt_t_gestantes',
+            [
+                'attribute' => 'id_gt_t_gestantes',
+                'value' => function($model) {
+                    return $model->idGtTGestantes['fullNombre'];
+                },
+            ],
         ],
     ]) ?>
 

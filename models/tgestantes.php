@@ -81,6 +81,11 @@ class tgestantes extends \yii\db\ActiveRecord
         ];
     }
 
+   public function getFullNombre()
+   {
+      return $this->documento . " " . $this->nombre . " " . $this->apellido;
+   }
+
     /**
      * @return \yii\db\ActiveQuery
      */
