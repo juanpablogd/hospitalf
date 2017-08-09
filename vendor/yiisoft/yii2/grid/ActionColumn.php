@@ -144,6 +144,7 @@ class ActionColumn extends Column
     {
         $this->initDefaultButton('view', 'eye-open');
         $this->initDefaultButton('update', 'pencil');
+        $this->initDefaultButton('fcontrol', 'calendar');
         $this->initDefaultButton('delete', 'trash', [
             'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
             'data-method' => 'post',
@@ -170,6 +171,9 @@ class ActionColumn extends Column
                         break;
                     case 'delete':
                         $title = Yii::t('yii', 'Delete');
+                        break;
+                    case 'fcontrol':
+                        $title = 'Ad. Control';
                         break;
                     default:
                         $title = ucfirst($name);
