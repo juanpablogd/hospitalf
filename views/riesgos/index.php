@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            'nombre_riegos',
+            'nombre_riesgos',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

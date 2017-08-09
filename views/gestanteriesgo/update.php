@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $model app\models\psgestanteriesgo */
 
 $this->title = 'Actualizar riesgo gestante: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Riesgos gestante', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => 'Riesgos gestante', 'url' => ['index', 'id' => $_GET['id_gt_t_embarazo']]];
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id, 'id_gt_t_embarazo' => $_GET['id_gt_t_embarazo']]];
 $this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="psgestanteriesgo-update">

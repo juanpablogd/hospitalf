@@ -14,9 +14,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'riesgo')->checkbox() ?>
 
-    <?= $form->field($model, 'id_gt_t_embarazo')->textInput() ?>
-
     <?= $form->field($model, 'id_gt_p_riesgos')->textInput() ?>
+
++<?php
+ 	echo $form->field($model, 'id_gt_t_embarazo')
+			->hiddenInput(['value' => $_GET['id_gt_t_embarazo']])
+			->label(false)
+?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

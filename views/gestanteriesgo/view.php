@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\psgestanteriesgo */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Riesgos de gestante', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Riesgos de gestante', 'url' => ['index','id' => $_GET['id_gt_t_embarazo']]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="psgestanteriesgo-view">
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
+        <?= Html::a('Actualizar', ['update', 'id' => $model->id, 'id_gt_t_embarazo'=>$_GET['id_gt_t_embarazo']], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => $model->id, 'id_gt_t_embarazo'=>$_GET['id_gt_t_embarazo']], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Seguro desea eliminar este elemento?',
