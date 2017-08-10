@@ -60,7 +60,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             'name' => 'fecha_ultima_regla',
                             'attribute' => 'fecha_ultima_regla',
                             'options' => ['placeholder' => 'Seleccione Fecha...'],
-                            'form' => $form,
                             'pluginOptions' => [
                                 'format' => 'yyyy-mm-dd',
                                 'autoclose' => true,
