@@ -472,9 +472,9 @@ class BaseYii
      */
     public static function powered()
     {
-        return \Yii::t('yii', 'Powered by {yii}', [
-            'yii' => '<a href="http://www.yiiframework.com/" rel="external">' . \Yii::t('yii',
-                    'Yii Framework') . '</a>'
+        return \Yii::t('yii', 'Realizado por: {yii}', [
+            'yii' => '<a href="http://www.cundinamarca.gov.co/wps/portal/Secretariadetics" rel="external" target="_blank">' . \Yii::t('yii',
+                    'Secretaría de Tecnologías de la Información y las Comunicaciones') . '</a>'
         ]);
     }
 
