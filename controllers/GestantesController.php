@@ -33,10 +33,9 @@ class GestantesController extends Controller
      * Lists all tgestantes models.
      * @return mixed
      */
-    public function actionIndex($id)
+    public function actionIndex()
     {
         $searchModel = new tgestantesSearch();
-        $searchModel->id_gt_t_embarazo = $id;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
