@@ -8,6 +8,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Fechas de control';
+$this->params['breadcrumbs'][] = ['label' => 'Gestantes', 'url' => ['embarazo/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tfechacontrol-index">

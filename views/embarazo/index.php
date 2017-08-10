@@ -109,8 +109,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'title' => 'Ad. Riesgos',]);
                     }
                 ],
-                'urlCreator' => function ($action, $searchModel, $key, $index) {
-					echo $action." ";
+                'urlCreator' => function ($action, $searchModel, $key, $index) {    //echo $action." ";
                     if ($action === 'view') {
                             $url = 'index.php?r=embarazo/view&id='.$searchModel['id'];
                             return $url;

@@ -12,6 +12,7 @@ use app\models\psgestanteriesgo;
  */
 class psgestanteriesgoSearch extends psgestanteriesgo
 {
+    public $nombre_riesgos;
     /**
      * @inheritdoc
      */
@@ -19,6 +20,7 @@ class psgestanteriesgoSearch extends psgestanteriesgo
     {
         return [
             [['id', 'id_gt_t_embarazo', 'id_gt_p_riesgos'], 'integer'],
+            [['nombre_riesgos'], 'safe'],
             [['riesgo'], 'boolean'],
         ];
     }
@@ -47,6 +49,7 @@ class psgestanteriesgoSearch extends psgestanteriesgo
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['attributes' => ['riesgo', 'nombre_riesgos']]
         ]);
 
         $this->load($params);
@@ -57,13 +60,13 @@ class psgestanteriesgoSearch extends psgestanteriesgo
             return $dataProvider;
         }
 
+        $query->joinWith('idGtPRiesgos');
+
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
             'riesgo' => $this->riesgo,
-            'id_gt_t_embarazo' => $this->id_gt_t_embarazo,
-            'id_gt_p_riesgos' => $this->id_gt_p_riesgos,
         ]);
+        $query->andFilterWhere(['like', 'LOWER(gt_p_riesgos.nombre_riesgos)', strtolower($this->nombre_riesgos)]);
 
         return $dataProvider;
     }

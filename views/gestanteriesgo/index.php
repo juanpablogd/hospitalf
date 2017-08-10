@@ -8,6 +8,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Riesgos gestante';
+$this->params['breadcrumbs'][] = ['label' => 'Gestantes', 'url' => ['embarazo/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="psgestanteriesgo-index">
@@ -16,16 +17,45 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Crear riesgo gestante', ['create'], 'id_gt_t_embarazo' => $_GET['id']], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear riesgo gestante', ['create', 'id_gt_t_embarazo' => $_GET['id']], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
+            [
+                'label' => 'F. última regla',
+                'format' => 'ntext',
+                'attribute'=>'fecha_ultima_regla',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo['fecha_ultima_regla'];
+                },
+            ],
+            [
+                'label' => 'Documento',
+                'format' => 'ntext',
+                'attribute'=>'document0',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo->idGtTGestantes->documento;
+                },
+            ],
+            [
+                'label' => 'Nombre',
+                'format' => 'ntext',
+                'attribute'=>'nombre',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo->idGtTGestantes->nombre;
+                },
+            ],
             'riesgo:boolean',
-            'id_gt_t_embarazo',
-            'id_gt_p_riesgos',
-
+            [
+                'label' => 'Tipo',
+                'format' => 'ntext',
+                'attribute'=>'nombre_riesgos',
+                'value' => function($model) {
+                    return $model->idGtPRiesgos->nombre_riesgos;
+                },
+            ],
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} {update} {delete}',
@@ -44,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'buttons'  => [
                     'delete' => function($url, $searchModel) {
                             return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $searchModel['id'], 'id_gt_t_embarazo' => $_GET['id']], [
-                                    'title' => Yii::t('app', 'Delete'), 'data-confirm' => Yii::t('app', 'Desea eliminar este elemento?'),'data-method' => 'post']);
+                                    'title' => 'Borrar', 'data-confirm' => Yii::t('app', 'Desea eliminar este elemento?'),'data-method' => 'post']);
                     }
                 ],
                 'urlCreator' => function ($action, $searchModel, $key, $index) {

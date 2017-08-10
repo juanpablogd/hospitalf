@@ -33,9 +33,10 @@ class GestanteriesgoController extends Controller
      * Lists all psgestanteriesgo models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id)
     {
         $searchModel = new psgestanteriesgoSearch();
+        $searchModel->id_gt_t_embarazo = $id;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -66,7 +67,7 @@ class GestanteriesgoController extends Controller
         $model = new psgestanteriesgo();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id, 'id_gt_t_embarazo' => $_GET['id_gt_t_embarazo']]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -85,7 +86,7 @@ class GestanteriesgoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id, 'id_gt_t_embarazo' => $_GET['id_gt_t_embarazo']]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -103,7 +104,7 @@ class GestanteriesgoController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['index','id'=>$_GET['id_gt_t_embarazo']]);
     }
 
     /**

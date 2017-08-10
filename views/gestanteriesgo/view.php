@@ -28,10 +28,39 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            [
+                'label' => 'F. última regla',
+                'format' => 'ntext',
+                'attribute'=>'fecha_ultima_regla',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo['fecha_ultima_regla'];
+                },
+            ],
+            [
+                'label' => 'Documento',
+                'format' => 'ntext',
+                'attribute'=>'document0',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo->idGtTGestantes->documento;
+                },
+            ],
+            [
+                'label' => 'Nombre',
+                'format' => 'ntext',
+                'attribute'=>'nombre',
+                'value' => function($model) {
+                    return $model->idGtTEmbarazo->idGtTGestantes->nombre;
+                },
+            ],
             'riesgo:boolean',
-            'id_gt_t_embarazo',
-            'id_gt_p_riesgos',
+            [
+                'label' => 'Tipo',
+                'format' => 'ntext',
+                'attribute'=>'nombre_riesgos',
+                'value' => function($model) {
+                    return $model->idGtPRiesgos->nombre_riesgos;
+                },
+            ],
         ],
     ]) ?>
 

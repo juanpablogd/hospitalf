@@ -48,7 +48,7 @@ class psgestanteriesgo extends \yii\db\ActiveRecord
             'id' => 'ID',
             'riesgo' => 'Riesgo',
             'id_gt_t_embarazo' => 'Embarazo',
-            'id_gt_p_riesgos' => 'Riesgos',
+            'id_gt_p_riesgos' => 'Tipo',
         ];
     }
 
