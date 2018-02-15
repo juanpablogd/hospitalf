@@ -19,9 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<a href="index.php?r=cie10/index">Cie10</a>
 			<a href="index.php?r=ingresos/index">Ingresos</a>
 			<a href="index.php?r=tipovivienda/index">Tipo de Vivienda</a>
-			<a href="index.php?r=ubicacion/index">Ubicación</a>
-			<a href="index.php?r=rangoscontrol/index">Rangos de Control</a>
-			<a href="index.php?r=foto/index">Foto</a>
+			
 		</div>
     </p>
 

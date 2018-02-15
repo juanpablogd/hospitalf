@@ -10,15 +10,6 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
-/*  CAmbiar css y js
-1) Crear archivo en la siguiente ruta {yourproject}\assets\jpAppAsset.php
-1.1 Modificar
-    *class jpAppAsset extends AssetBundle
-    *adicionar los css y js necesarios
-2) Modificar la vista e.g. {yourproject}\views\layouts\main.php
-    Adicionar Clase creada en 1) => use app\assets\jpAppAsset;
-    Registrar Clase              => jpAppAsset::register($this);
-*/
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -47,20 +38,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Inicio', 'url' => ['/site/index']],
-            ['label' => 'Admin', 'url' => ['/site/admin']],
-//            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
+            ['label' => 'Admin', 'url' => ['/site/admin']]
         ],
     ]);
     NavBar::end();
